@@ -1,0 +1,24 @@
+
+    <div>
+        <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" position="data.position" *ngFor="let val of data.data">
+            <h3 class="extraCSSlabel_undefined" *ngIf="val.apibindtoggle === false || !val.apibindtoggle">{{val.title}}</h3>
+            <h3 class="extraCSSlabel_undefined" *ngIf="val.apibindtoggle === true && val.api_method === 'GET'" (click)="getclickEvent(val.apilink)">{{val.title}}</h3>
+            <h3 class="extraCSSlabel_undefined" *ngIf="val.apibindtoggle === true && val.api_method === 'POST'" (click)="postclickEvent(val.apilink, val.bodyofapi)">{{val.title}}</h3>
+            <h3 class="extraCSSlabel_undefined" *ngIf="val.apibindtoggle === true && val.api_method === 'PUT'" (click)="putclickEvent(val.apilink, val.bodyofapi)">{{val.title}}</h3>
+            <h3 class="extraCSSlabel_undefined" *ngIf="val.apibindtoggle === true && val.api_method === 'DELETE'" (click)="deleteclickEvent(val.apilink, val.bodyofapi)">{{val.title}}</h3>
+        </p-sidebar>
+       
+        <p-button type="button" class="mr-2" (click)="visibleSidebar1 = true" icon="pi pi-arrow-right" ></p-button>
+        <img style="height:40px; margin-top: -1rem;" src="../../../assets/img/decorlogo.PNG">
+        &nbsp;&nbsp;
+        <input pInputText type="text"  style="border-radius:27px; width: 60%; " 
+        
+        placeholder="What are you looking for ?" />    &nbsp;&nbsp;    &nbsp;&nbsp;
+        <i class="pi pi-user"></i>
+        <p-tag  [style]="{'margin-left':'19px', 'font-size':'19px',  'border-radius':'26px'}">Hey! Log in or sign up
+        </p-tag>
+        &nbsp;&nbsp;    &nbsp;&nbsp;
+        <i class="pi pi-shopping-cart"></i>
+      
+    </div>
+    

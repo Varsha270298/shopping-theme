@@ -1,0 +1,18 @@
+
+	
+        <div class="tabtab">
+    
+        <p-tabView (onChange)="clicktab($event)" >
+                    <p-tabPanel  *ngFor="let val of data.data" header="{{val.title}}">
+                    <div *ngIf="val.flag">
+                    <ngx-dynamic-hooks [content]="val.value"></ngx-dynamic-hooks>
+                    </div>
+                    <div *ngIf="!val.flag">
+                        <!-- <p>{{val.value}}</p> -->
+                    </div>   
+                    </p-tabPanel>
+        </p-tabView>
+        <img class="landingIMG" src="../../../assets/img/limited-time-offer landing page.avif">
+    </div> 
+
+    
